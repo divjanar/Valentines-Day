@@ -1,8 +1,12 @@
-
 $(document).ready(function() {
     var envelope = $("#envelope");
     var btn_open = $("#open");
-    var btn_reset = $("#reset");
+    var btn_reset = $("#reset"); 
+    var flowersImage = $("#flowers-image");
+    var teddyImage = $("#teddy-image");
+    var chocolate_strawberriesImage = $("#chocolate_strawberries-image");
+    var sunsetImage = $("#sunset-image");
+    var sunset1Image = $("#sunset1-image");
 
     envelope.click(function() {
         open();
@@ -11,6 +15,7 @@ $(document).ready(function() {
         open();
     });
     btn_reset.click(function() {
+        close();
         moveButtonRandomly(btn_reset);
     });
 
@@ -36,11 +41,22 @@ $(document).ready(function() {
     function open() {
         envelope.addClass("open")
             .removeClass("close");
+
+        flowersImage.removeClass("hidden");
+        teddyImage.removeClass("hidden");
+        chocolate_strawberriesImage.removeClass("hidden");
+        sunsetImage.removeClass("hidden");
+        sunset1Image.removeClass("hidden");
     }
 
     function close() {
         envelope.addClass("close")
             .removeClass("open");
-    }
 
-})
+        flowersImage.addClass("hidden");
+        teddyImage.addClass("hidden");
+        chocolate_strawberriesImage.addClass("hidden");
+        sunsetImage.addClass("hidden");
+        sunset1Image.addClass("hidden");
+    }
+});
